@@ -43,8 +43,8 @@ yarn add vue-scrollto
 
 Directly include it in html:
 ```html
-<script src="https://unpkg.com/vue@2.2.4"></script>
-<script src="https://unpkg.com/vue-scrollto"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-scrollto"></script>
 ```
 <p class="tip">
     When including it in html, it will automatically call `Vue.use` and also set a `VueScrollTo` variable that you can use!
@@ -136,10 +136,10 @@ var options = {
     easing: 'ease-in',
     offset: -60,
     cancelable: true,
-    onStart: function() {
+    onStart: function(element) {
       // scrolling started
     },
-    onDone: function() {
+    onDone: function(element) {
       // scrolling is done
     },
     onCancel: function() {
@@ -189,17 +189,17 @@ Indicates if user can cancel the scroll or not.
 *Default:* `true`
 
 #### onStart
-A callback function that should be called when scrolling has started.
+A callback function that should be called when scrolling has started. Receives the target element as a parameter.
 
 *Default:* `noop`
 
 #### onDone 
-A callback function that should be called when scrolling has ended. 
+A callback function that should be called when scrolling has ended. Receives the target element as a parameter.
 
 *Default:* `noop`
 
 #### onCancel 
-A callback function that should be called when scrolling has been aborted by the user (user scrolled, clicked etc.).
+A callback function that should be called when scrolling has been aborted by the user (user scrolled, clicked etc.). Receives the abort event and the target element as parameters.
  
 *Default:* `noop`
 
